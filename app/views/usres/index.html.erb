@@ -1,0 +1,25 @@
+<h1>Listing usres</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @usres.each do |usre| %>
+  <tr>
+    <td><%= usre.name %></td>
+    <td><%= usre.email %></td>
+    <td><%= link_to 'Show', usre %></td>
+    <td><%= link_to 'Edit', edit_usre_path(usre) %></td>
+    <td><%= link_to 'Destroy', usre, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Usre', new_usre_path %>
